@@ -60,7 +60,7 @@ class Knight_Path_Finder
   end  
 
   def find_path(end_pos)
-    end_node = root_node.children.dfs(end_pos)
+    end_node = root_node.dfs(end_pos)
     trace_path_back(end_node)
   end  
 
@@ -69,8 +69,8 @@ class Knight_Path_Finder
     #reverse it ^ 
     current_node = end_node 
     while current_node.parent != nil
-      parent_nodes << current.node.value 
-      current_node = current.node.parent
+      route << current_node.value 
+      current_node = current_node.parent
     end
     return route.reverse
   end
